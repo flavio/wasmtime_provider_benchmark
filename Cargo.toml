@@ -1,0 +1,21 @@
+[package]
+name = "wasmtime_provider_bench"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+wapc_1_0 = { package = "wapc", version = "1.0.0" }
+wapc_1_3 = { package = "wapc", git = "https://github.com/flavio/wapc-rs", branch = "wasmtime_provider-improve-clone-performance" }
+
+wasmtime-provider_1_2 = { package = "wasmtime-provider", version = "1.2.0", features = ["cache"] }
+wasmtime-provider_1_3 = { package = "wasmtime-provider", git = "https://github.com/flavio/wapc-rs", branch = "wasmtime_provider-improve-clone-performance", features = ["cache"] }
+
+criterion = "0.4"
+
+[[bench]]
+name = "benchmarks"
+harness = false
