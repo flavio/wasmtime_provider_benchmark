@@ -1,0 +1,1 @@
+A benchmark comparing the performance of `WasmtimeProvider::clone` implementations
